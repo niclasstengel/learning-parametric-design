@@ -23,8 +23,7 @@ let b = 0;
 //smileParameters
 let jawDropIntensity = 5;
 
-
-//insert okayMood, feelinGood, feelinExtraGood, okayStopItPlease
+let selectInput;
 
 let widthSmile = 20;
 let heightSmile = 5;
@@ -49,11 +48,28 @@ function preload(){
 function setup() {
   createCanvas(sketchWidth, sketchHeight);
 
-
-  
+  selectInput = createSelect();
+  selectInput.position(10, 410);
+  selectInput.option('okayMood');
+  selectInput.option('feelinGood');
+  selectInput.option('feelinExtraGood');
+  selectInput.option('okayStopItPlease');
+  selectInput.changed(mySelectEvent);
 
 }
 
+function mySelectEvent() {
+  let item = selectInput.value();
+  if (item === 'okayMood') {
+    widthSmile = 5;
+  } else if (item === 'feelinGood') {
+    widthSmile = 10;
+  } else if (item === 'feelinExtraGood') {
+    widthSmile = 15;
+  } else if (item === 'okayStopItPlease') {
+    widthSmile = 20;
+  }
+}
 
 
 
@@ -90,7 +106,7 @@ rotate (Math.PI / 180 * rotateAngle);
 for (let angle = 0; angle < 360; angle += 360/amountTriangle){
 
   //polarCord
-   push();
+  push();
   const x = radius * cos(Math.PI / 180 * angle);
   const y = radius * sin(Math.PI / 180 * angle);
 
@@ -105,7 +121,7 @@ for (let angle = 0; angle < 360; angle += 360/amountTriangle){
   //trianlge
   triangle (0, 0, 300, -triangleWidth, 300, triangleWidth);
 
-  pop();
+  // pop();
 
   }
 }

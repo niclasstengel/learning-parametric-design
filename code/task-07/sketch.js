@@ -45,7 +45,6 @@ function draw (){
     }
   }
 
-  // Draw all the circles
   for (var i = 0; i < circles.length; i++) {
     fill(0);
     noStroke();
