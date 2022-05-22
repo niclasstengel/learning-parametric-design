@@ -137,17 +137,6 @@ function polar (radius, angle){
 
 }
 
-function keyPressed (){
-
-  if (keyIsDown(LEFT_ARROW)){
-    rotateSpeed += 0.5
-  }
-
-  else if (keyIsDown(RIGHT_ARROW)){
-      rotateSpeed -= 0.5
-  }
-}
-
 
 //Draw
 function draw() {
@@ -239,6 +228,16 @@ for (let angle = 0; angle < 360; angle += 360/amountTriangle){
   );
 
   endShape();
+
+
+    if (keyIsDown(LEFT_ARROW)){
+      rotateSpeed += 0.5
+    }
+  
+    else if (keyIsDown(RIGHT_ARROW)){
+        rotateSpeed -= 0.5
+    }
+  
 
 
   }
