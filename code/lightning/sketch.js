@@ -28,10 +28,9 @@ function setup() {
 function draw() {
 
   for (let c = 0; c < sketchWidth; c +=1 ){
-    points.push({
-      'x': c,
-      'y': noise(c/100)
-    });
+    points.push(  
+      noise(c/200)
+    );
   };
 
   for (let a = 0; a <= points.length; a +=1){
@@ -42,38 +41,32 @@ function draw() {
   
   
 
-  stroke ('green');
-  strokeWeight (5);
-  beginShape();
-  for (let lx = 0; lx < sketchWidth; lx += 1) {
-    const ly = noise(lx / 200);
-    vertex(lx, ly * 100);
-    
-    
-  }
-  
-endShape();
+//   stroke ('green');
+//   strokeWeight (5);
+//   beginShape();
+//   for (let lx = 0; lx < sketchWidth; lx += 1) {
+//     const ly = noise(lx / 200);
+//     vertex(lx, ly * 100);
+//   }
+// endShape();
 
 
 stroke('blue');
 strokeWeight (1);
 beginShape();
 for (let c= 0; c <= points.length; c +=1){
-  vertex(c, points[c]);
+  vertex(c, points[c] * 100);
 }
 endShape();
 
-beginShape();
-vertex (0, points[0]);
-vertex (0, points[600]);
-endShape();
+
 
 
 
 stroke('red');
 beginShape();
-    for (let xl = 0; xl < 600; xl += random(0,5)) {
-      vertex(xl, random(200,205))
+    for (let xl = 0; xl < 600; xl += 1) {
+      vertex(xl, points[xl] * 100 + random(200, 205))
 
     }
   

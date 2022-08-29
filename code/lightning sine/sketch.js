@@ -114,7 +114,6 @@ function draw() {
 
 
   // //vertex based on points
-  // stroke(255);
   // beginShape();
   // for (let v = 0; v < pointsX.length; v ++){
   //   vertex(pointsX[v], pointsY[v]);
